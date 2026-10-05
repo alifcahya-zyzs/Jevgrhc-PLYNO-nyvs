@@ -31,6 +31,9 @@
   <img width="1667" height="934" alt="Screenshot (297)" src="https://github.com/user-attachments/assets/f3c72548-bff3-4101-9a91-baa47c05b98b" />
   &nbsp;
 6. Maka akan terlihat disini apakah kita diizinkan untuk melakukan perintah apa saja dan apakah ada password nya, disini terlihat bahwa ALL menunjukkan kita bisa melakukan perintah apa saja dan NO PASSWD menunjukkan kalo saat menjalankan perintah itu kita tidak memerlukan password.
+
+<br>
+
 7. Sekarang kita coba ganti isi file php tadi dengan ```sudo ls /root``` untuk melihat isi direktori root. Lalu upload ulang file .php nya lalu ubah URL nya seperti di cara tadi. Disini terlihat isinya ada flag.txt
   &nbsp;
   <img width="1674" height="943" alt="Screenshot (293)" src="https://github.com/user-attachments/assets/95b8431e-e06c-45d7-9515-9d4aba0f2255" />
