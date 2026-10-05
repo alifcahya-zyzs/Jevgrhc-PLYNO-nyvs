@@ -16,10 +16,13 @@
 3. Semua bentuk file dapat di upload disini karena tidak di sanitasi. Disini file gambar tetap bisa ter-upload tapi yang dibutuhkan oleh web nya adalah file php karena di URL nya tertulis gitu.
 4. Karena file php bisa di upload, coba buat file php di notepad atau menggunakan nano dengan isi:
 
-  ```
+  ```php
   <?php echo exec("sudo -l");?>
   ```
    untuk melihat apakah kita diizinkan untuk menkalankan perintah root dan apakah memerlukan password saat ingin melakukannya.
+
+   <br>
+   
    &nbsp;
 5. Lalu ubah bagian akhir URL menjadi ```/uploads/"nama-file".php``` untuk melihat hasil eksekusi dari file php tadi.
   &nbsp;
