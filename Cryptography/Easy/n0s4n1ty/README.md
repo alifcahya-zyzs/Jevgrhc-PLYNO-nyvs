@@ -21,7 +21,7 @@
   ```
 
   untuk melihat apakah kita diizinkan untuk menkalankan perintah root dan apakah memerlukan password saat ingin melakukannya. 
-  5. Lalu ubah bagian akhir URL menjadi ```/uploads/"nama-file".php``` untuk melihat hasil eksekusi dari file php tadi.
+5. Lalu ubah bagian akhir URL menjadi ```/uploads/"nama-file".php``` untuk melihat hasil eksekusi dari file php tadi.
   &nbsp;
   <img width="1679" height="944" alt="Screenshot (292)" src="https://github.com/user-attachments/assets/82028caa-f12a-48fa-bbc8-546c1887f9c2" />
   &nbsp;
