@@ -7,9 +7,9 @@
   a. Buka power shell windows lalu masuk ke direktori dimana file hasil unduhan itu disimpan.
   b. Ekstrak file source.tar.gz dengan cara mengetik perintah: 
   
-    ```PowerShell
+   ```PowerShell
     tar -xvf source.tar.gz
-    ```
+   ```
     
   c. Setelah itu masuk ke folder hasil ekstrak source tadi dengan `cd source` lalu `ls` maka akan terlihat ada 3 isi yaitu
     foto
