@@ -37,10 +37,19 @@
     '||(select content from secrets where owner_id='e2a66f7d-2ce6-4861-b4aa-be8e069601cb')||'
    ```
 
-   `'` gunanya untuk menghentikan atau memulai string pada SOL tergantung pada dimana peletakannya, di depan sendiri itu ada tanda `'` untuk menghentikan string bawaan yang ada didepannya agar kita bisa menyisipkan string baru.
-   `||` gunanya untuk menyambungkan string pertama dengan string kedua agar tidak terjadi eror karena ada dua string dalam satu query. Intinya seperti lem penghubung antar string.
-   `()` gunanya untuk membungkus perintah/request SQL agar diproses secara terpisah dan didahulukan agar tidak eror.
-   `select content from secrets where owner_id='e2a66f7d-2ce6-4861-b4aa-be8e069601cb'` Nah yang ini adalah perintah request ke database SQL nya. `select content from secrets` meminta SQL untuk mengambil konten dari tabel secret. `where owner_id='e2a66f7d-2ce6-4861-b4aa-be8e069601cb'` yang ini memfilter SQL agar mengambil konten yang spesifik dari akun target dengan owner_id yang spesifik itu.
+   <br>
+  - `'` gunanya untuk menghentikan atau memulai string pada SOL tergantung pada dimana peletakannya, di depan sendiri itu ada tanda `'` untuk menghentikan string bawaan yang ada didepannya agar kita bisa menyisipkan string baru.
+  <br>
+  - `||` gunanya untuk menyambungkan string pertama dengan string kedua agar tidak terjadi eror karena ada dua string dalam satu query. Intinya seperti lem penghubung antar string.
+  <br>
+  - `()` gunanya untuk membungkus perintah/request SQL agar diproses secara terpisah dan didahulukan agar tidak eror.
+  <br>
+  - `select content from secrets where owner_id='e2a66f7d-2ce6-4861-b4aa-be8e069601cb'` Nah yang ini adalah perintah request ke database SQL nya.
+  <br>
+  - `select content from secrets` meminta SQL untuk mengambil konten dari tabel secret.
+  <br> 
+  - `where owner_id='e2a66f7d-2ce6-4861-b4aa-be8e069601cb'` yang ini memfilter SQL agar mengambil konten yang spesifik dari akun target dengan owner_id yang spesifik itu.
+   
    <br>
 7. Submit perintah SQLi itu lalu lihat hasil nya, jika langsung menghasilkan flag maka berhasil.
    foto
