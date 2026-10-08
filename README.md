@@ -7,3 +7,7 @@ Gunakan command ini jika ingin mengunduh write up saya
 ```bash
 git clone https://github.com/alifcahya-zyzs/Jevgrhc-PLYNO-nyvs
 ```
+
+# Nama-nama folder:
+1. Jro Rkcybvgngvba = `Web Exploitataion`
+2. 
