@@ -10,13 +10,13 @@ Gunakan command ini jika ingin mengunduh write up saya
 git clone https://github.com/alifcahya-zyzs/Jevgrhc-PLYNO-nyvs
 ```
 
+<br>
 
-### === SAYA JUGA MASIH BELAJAR JADI HARAP MAKLUM KALO BERANTAKAN ===
+### ---=== HARAP MAKLUM KALO BERANTAKAN DAN MASIH BANYAK YANG SALAH KARENA SAYA DISINI JUGA MASIH BELAJAR ===---
 
+<br>
 
 # Nama-nama folder(): 
-
-&nbsp;
 
 `Nama folder ini sengaja di encrypt pakai rot13 biar susah ditemuin di internet :)`
 
