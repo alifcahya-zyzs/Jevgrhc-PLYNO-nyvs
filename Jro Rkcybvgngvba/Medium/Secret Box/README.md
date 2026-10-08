@@ -1,8 +1,7 @@
 ﻿# How to Solve Secret Box
  <br>
 1. Pertama luncurkan instans dan buka website soal, download juga file source code yang ada. Disini juga ada petunjuk untuk menggunakan SQLi untuk menyelesaikan ctf ini. 
-   
-   &nbsp;
+
    
    <img width="1920" height="945" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/9e8b922e-8329-41ff-8a6c-2c3ae632604a" />
    
