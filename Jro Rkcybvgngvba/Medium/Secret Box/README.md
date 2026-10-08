@@ -1,6 +1,6 @@
 ﻿# How to Solve Secret Box
  <br>
-1. Pertama luncurkan instans dan buka website soal, download juga file source code yang ada. Disini juga ada petunjuk untuk menggunakan SQLi untuk menyelesaikan ctf ini.  
+1. Pertama luncurkan instans dan buka website soal, download juga file source code yang ada. Disini juga ada petunjuk untuk menggunakan SQLi untuk menyelesaikan ctf ini. 
    
    &nbsp;
    
@@ -10,7 +10,7 @@
    
    <img width="1920" height="947" alt="Screenshot (402)" src="https://github.com/user-attachments/assets/3108f05a-c418-42ac-b710-9d695b79bc00" />
 
-<br>
+   <br>
 
 2. Sebelum melakukan login atau sign in di website soal, kita lihat dulu isi source code hasil download nya dengan cara: 
 
@@ -44,9 +44,9 @@
      
    &nbsp; 
    
-<img width="1920" height="820" alt="Screenshot (388)" src="https://github.com/user-attachments/assets/ef007f07-1c8c-4de7-8127-b8c2016d8de4" />
+   <img width="1920" height="820" alt="Screenshot (388)" src="https://github.com/user-attachments/assets/ef007f07-1c8c-4de7-8127-b8c2016d8de4" />
 
-<br>
+   <br>
 
 3. Setelah mengetahui dimana letak kita akan menjalankan SQLi yaitu di tabel insert secrets, kita sign in dan login di website soal tadi menggunakan username dan pasword bebas.
 
