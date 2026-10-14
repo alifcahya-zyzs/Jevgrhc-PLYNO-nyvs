@@ -3,7 +3,7 @@
 
 &nbsp;
 
-**Link Soal:** [Disini](https://learn.cylabacademy.org/library/482?page=1&search=n0s&workspace=true)
+### Link Soal:   [Disini](https://learn.cylabacademy.org/library/482?page=1&search=n0s&workspace=true)
 ### Jenis Kerentanan: Improfer File Sanitizaiton atau kurangnya validasi format file yang dapat diunggah pada web tersebut. Dan juga kerentanan lainnya yaitu pemberian hak akses menjalankan command di web server nya untuk semua orang.
 ### Solusi: - Belum tahu
 &nbsp;
