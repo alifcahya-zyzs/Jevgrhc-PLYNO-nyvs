@@ -11,6 +11,9 @@
 
 &nbsp;
 
+## Langkah Penyelesaian: 
+
+
 1. Pertama, luncurkan instans dan buka web soal.
   <img width="1673" height="947" alt="Screenshot (377)" src="https://github.com/user-attachments/assets/b70742c8-1934-4d9f-82c4-292e3421ec4c" />
   &nbsp;
