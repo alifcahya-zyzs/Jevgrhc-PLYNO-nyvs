@@ -51,14 +51,14 @@
 3. Di baris 1 dan 2, ada kode untuk mengambil tools yang ada di python.
    
    
-   `from Crypto.Util.number import bytes_to_long, long_to_bytes` Kode ini mengambil 2 fungsi dari `Crypto.Util.number` yaitu fungsi `bytes_to_long` yang fungsinya merubah byte huruf atau angka menjadi angka kode ASCII. Dan satunya lagi yaitu fungsi `long_to_bytes` yang fungsinya kebalikan dari `bytes_to_long` yaitu merubah angka kode ASCII menjadi byte huruf atau angka biasa.
+   `from Crypto.Util.number import bytes_to_long, long_to_bytes` Kode ini mengambil 2 fungsi dari `Crypto.Util.number` yaitu fungsi `bytes_to_long` yang fungsinya menggabungkan beberapa bytes menjadi satu kesatuan angka yang sangat besar. Dan satunya lagi yaitu fungsi `long_to_bytes` yang fungsinya kebalikan dari `bytes_to_long` yaitu memisahkan kesatuan angka besar tadi ke bentuk semulanya/aslinya agar mudah dibaca.
    
    
    `from Crypto.Random import get_random_bytes` Kode ini mengambil 1 fungsi dari `Crypto.Random` yaitu fungsi `get_random_bytes` yang fungsinya menghasilkan byte kriptografi acak.
    
    &nbsp;
 
-4. Di baris ke 4 `key = bytes_to_long(get_random_bytes(126))` adalah fungsi untuk mengambil 126 byte acak sebagai key. Fungsi `(get_random_bytes(126))` ini adalah yang berfungsi mengambil 126 byte acak itu. Sedangkan kode `bytes_to_long` adalah fungsi yang merubah byte acak itu menjadi angka ASCII. 126 byte acak itu berarti ada 1008 bit yang berarti juga ada 2<sup>1008</sup> kemungkinan.
+4. Di baris ke 4 `key = bytes_to_long(get_random_bytes(126))` adalah fungsi untuk mengambil 126 byte acak sebagai key. Fungsi `(get_random_bytes(126))` ini adalah yang berfungsi mengambil 126 byte acak itu lalu digabungkan oleh fungsi `bytes_to_long` menjadi satu kesatuan angka yang sangat besar. 126 byte acak itu berarti ada 1008 bit yang berarti juga ada 2<sup>1008</sup> kemungkinan.
    
    &nbsp;
 
@@ -159,7 +159,40 @@
    Nah fungsi ini lah yang bertugas meng enkripsi plaintext menggunakan key yang sudah dibuat tadi dengan cara byte dari plaintext di XOR dengan byte dari keystream. lalu hasil XOR tadi dimasukkan kedalam variabel output tadi.
    
    
+   ```Python
+   return bytes_to_long(bytes(output))
+   ```
+   Fungsi ini menggabungkan kumpulan bytes menjadi satu kesatuan angka lalu memasukkannya di variabel output kemudian membawa hasilnya keluar dari fungsi ini. Di fungsi ini, parameter `(bytes(output))` berfungsi mengunci variabel output agar hanya menyimpan data biner bytes.
+   
+   &nbsp;
+   
+8. Pada baris ke 25, variabel `pt` itu bermaksud `plaintext`
    
    
+   ```Python
+   pt = b"[redacted]"
+   ```
+   Maksud fungsi variabel ini adalah sebagai input atau tempat memasukkan plaintext/flag yang akan dienkripsi.
+   `b"..."` maksudnya plaintext itu akan diproses dalam bentuk biner.
    
+   &nbsp;
+   
+9. Pada baris 26, variabel ini yang melakukan proses enkripsi dengan memasukkan variabel `pt`(plaintext) kedalam parameter kosong `pt_bytes` tadi sehingga proses enkripsi lfsr terjadi karena **'mesin LFSR'** mendapatkan input untuk diproses. Setelah itu ciphertext tadi disimpan di variabel ini.
+   
+   ```Python
+   ct = encrypt_lfsr(pt)
+   ```
+   
+   &nbsp;
+
+10. Pada baris terakhir/28, fungsi ini menampilkan hasil ciphertext ke layar, namun ciphertext tadi tidak langsung ditampilkan begitu saja tapi ciphertext dalam bentuk angka besar tadi dipisah dan dikembalikan ke bentuk asalnya oleh `long_to_bytes` kemudian dirubah bentuknya menjadi bilangan hexadecimal yang mudah dibaca manusia.
+   
+   ```Python
+   print(long_to_bytes(ct).hex())
+   ```
+   
+   &nbsp;
+
+11. #Blablabla
+
 # I'm Confused :{
