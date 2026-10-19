@@ -58,7 +58,7 @@
    
    &nbsp;
 
-4. Di baris ke 4 `key = bytes_to_long(get_random_bytes(126))` adalah fungsi untuk mengambil 126 byte acak sebagai key. Fungsi `(get_random_bytes(126))` ini adalah yang berfungsi mengambil 126 byte acak itu. Sedangkan kode `bytes_to_long` adalah fungsi yang merubah byte acak itu menjadi angka ASCII.
+4. Di baris ke 4 `key = bytes_to_long(get_random_bytes(126))` adalah fungsi untuk mengambil 126 byte acak sebagai key. Fungsi `(get_random_bytes(126))` ini adalah yang berfungsi mengambil 126 byte acak itu. Sedangkan kode `bytes_to_long` adalah fungsi yang merubah byte acak itu menjadi angka ASCII. 126 byte acak itu berarti ada 1008 bit yang berarti juga ada 2<sup>1008</sup> kemungkinan.
    
    &nbsp;
 
@@ -120,11 +120,46 @@
    def encrypt_lfsr(pt_bytes):
    ```
    Baris ini mendefinisikan encrypt_lfsr sebagai blok fungsi baru dengan parameter kosong pt_bytes.
-
-
+   
+   
    ```Python
-       output = bytearray()
+    output = bytearray()
    ```
-   Baris ini membuat variabel output untuk menyimpan hasil lfsr secara urut.
+   Baris ini membuat variabel output untuk menyimpan hasil lfsr secara urut  agar tidak hilang saat lfsr sedang bekerja.
+   
+   
+   ```Python
+    lfsr = key & 0xFF
+   ```
+   `**Nah di bagian ini adalah petunjuk yang sangat penting untuk menemukan key dari lfsr ini**`
+   Petunjuknya adalah `& 0xFF` ini yang maksudnya adalah 0xFF ini hanya mengambil 8 bit paling belakang dari key karena 0xFF dalam biner hanya bernilai 8 bit angka 1. 0xFF ini juga dapat berfungsi karena adanya operasi bitwise AND dari karakter ini `&` . Jika tidak ada 0xFF maka pencarian key lfsr ini akan memerlukan banyak waktu karena harus mencoba 2<sup>1008</sup> kemungkinan sedangkan dengan adanya `& 0xFF` ini sangat mempermudah karena hanya mencoba 2<sup>8</sup> kemungkinan.
+   
+   
+   ```Python
+    for p in pt_bytes:
+   ```
+   Fungsi ini mendefinisikan variabel p dalam pt_bytes.
+   
+   
+   ```Python
+    lfsr = steplfsr(lfsr)
+   ```
+   Fungi ini mengambil output dari `steplfsr(lfsr)` tadi kemudian menyimpannya dalam variabel `lfsr` yang baru.
+   
+   
+   ```Python
+    ks = lfsr
+   ```
+   Yang ini tidak ada fungsinya sih, cuma merubah nama variabel lfsr menjadi ks(keystream)
+   
+   
+   ```Python
+    output.append(p ^ ks)
+   ```
+   Nah fungsi ini lah yang bertugas meng enkripsi plaintext menggunakan key yang sudah dibuat tadi dengan cara byte dari plaintext di XOR dengan byte dari keystream. lalu hasil XOR tadi dimasukkan kedalam variabel output tadi.
+   
+   
+   
+   
    
 # I'm Confused :{
