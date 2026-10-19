@@ -58,22 +58,73 @@
    
    &nbsp;
 
-4. Di baris ke 4 `key = bytes_to_long(get_random_bytes(126))` adalah fungsi untuk mengambil 126 byte acak sebagai key. Function ini `(get_random_bytes(126))` adalah yang berfungsi mengambil 126 byte acak itu. Sedangkan kode `bytes_to_long` adalah fungsi yang merubah byte acak itu menjadi angka ASCII.
-
+4. Di baris ke 4 `key = bytes_to_long(get_random_bytes(126))` adalah fungsi untuk mengambil 126 byte acak sebagai key. Fungsi `(get_random_bytes(126))` ini adalah yang berfungsi mengambil 126 byte acak itu. Sedangkan kode `bytes_to_long` adalah fungsi yang merubah byte acak itu menjadi angka ASCII.
+   
    &nbsp;
 
 5. Di baris 6-10 adalah blok kode yang yang berfungsi mengambil bit dari urutan yang dipilih yang disini adalah bit ke 7,5,4,3 dari setiap byte.
-
-
+   
+   
    `def steplfsr(lfsr):` berfungsi membuat blok fungsi steplfsr dengan parameter (lfsr).
-
-
+   
+   
    ```Python
    b7 = (lfsr >> 7) & 1
    b5 = (lfsr >> 5) & 1
    b4 = (lfsr >> 4) & 1
    b3 = (lfsr >> 3) & 1
    ```
-   Blok fungsi ini berfungsi untuk mengambil bit dari urutan bit ke 7,5,4,9 lalu di operasi bitwise &(AND) dengan angka 1(dalam byte) meskipun dalam bit biner angka 1 tetaplah hanya 1))
+   
+   Blok fungsi ini berfungsi untuk mengambil bit dari urutan bit ke 7,5,4,9 lalu di operasi bitwise &(AND) dengan angka 1(dalam byte), meskipun dalam bit biner angka 1 tetaplah hanya 1))
 
-## I'm Confused :{
+   &nbsp;
+
+6. Pada baris 12-14 ini masih sambungan dari blok fungsi steplfsr diatas, namun di bagian kode ini adalah yang berfungsi melakukan operasi bitwise XOR dalam lfsr dan mengirim hasilnya keluar dari blok fungsi steplfsr.
+
+
+   ```Python
+    feedback = b7 ^ b5 ^ b4 ^ b3
+   ```
+
+   Yang di atas ini adalah fungsi yang melakukan bitwise XOR nya menggunakan urutan bit yang sudah dipilih dan di operasi AND dengan 1 tadi.
+   
+   ```Python
+    lfsr = (feedback << 7) | (lfsr >> 1)
+   ```
+   
+   `(feedback << 7)` Yang ini berfungsi meletakkan bit hasil operasi XOR tadi ke urutan ke 7(ke bagian paling kiri barisan bit) lalu di operasikan OR oleh karakter `|`(pipe) ini dengan fungsi `(lfsr >> 1)`, nah fungsi ini mengambil parameter lfsr tadi lalu digeser ke kenan 1 langkah.
+
+   ```Python
+    return lfsr
+   ```
+
+   Fungsi ini berguna mengirimkan hasil lfsr ke luar blok fungsi ini agar bisa diolah lagi oleh fungsi lain.
+
+   &nbsp;
+
+7. Sekarang kita bahas blok fungsi baris ke 16-23 ini:
+   
+   ```Python
+   def encrypt_lfsr(pt_bytes):
+    output = bytearray()
+    lfsr = key & 0xFF
+    for p in pt_bytes:
+        lfsr = steplfsr(lfsr)
+        ks = lfsr
+        output.append(p ^ ks)
+    return bytes_to_long(bytes(output))
+   ```
+   
+   
+   ```Python
+   def encrypt_lfsr(pt_bytes):
+   ```
+   Baris ini mendefinisikan encrypt_lfsr sebagai blok fungsi baru dengan parameter kosong pt_bytes.
+
+
+   ```Python
+       output = bytearray()
+   ```
+   Baris ini membuat variabel output untuk menyimpan hasil lfsr secara urut.
+   
+# I'm Confused :{
