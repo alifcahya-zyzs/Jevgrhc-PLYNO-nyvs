@@ -193,6 +193,48 @@
    
    &nbsp;
 
-11. #Blablabla
+### Setelah memahami kode untuk enkripsi lfsr nya, sekarang kita buat kode untuk melakukan brute force pada ciphertext nya.
+
+&nbsp;
+
+1. Buka vs code lalu tulis kode seperti dibawah ini, nanti akan saya jelaskan fungsi-fungsi nya.
+
+
+   ```Python
+   from Crypto.Util.number import long_to_bytes
+
+   def steplfsr(lfsr):
+    b7 = (lfsr >> 7) & 1
+    b5 = (lfsr >> 5) & 1
+    b4 = (lfsr >> 4) & 1
+    b3 = (lfsr >> 3) & 1
+
+    feedback = b7 ^ b5 ^ b4 ^ b3
+    lfsr = (feedback << 7) | (lfsr >> 1) & 0xFF
+    return lfsr
+
+   ct_hex = "30cbb50e507774fdafd01e0bfdbc38d5eadf92991cdd347064e37444e517d661cea9"
+   ct_bytes = bytes.fromhex(ct_hex)
+
+
+   # Memulai Brute Force
+
+   for seed in range(256):
+    output = bytearray()
+
+    lfsr = seed
+
+    for char in ct_bytes:
+        lfsr = steplfsr(lfsr)
+        output.append(char ^ lfsr)
+
+    if b"academy" in output:
+        print(f"flag: {output.decode()}")
+        break
+   ```
+
+   &nbsp;
+
+2. 
 
 # I'm Confused :{
