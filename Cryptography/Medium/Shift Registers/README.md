@@ -26,7 +26,7 @@
    
 4. Setelah mendapatkan kode brute force nya, buka terminal dan cari direktori dimana file ciphertext/output.txt tadi disimpan. Jalankan command ini untuk mendapat isi/ciphertext nya.
    
-   ```bash
+   ```Bash
    cat output.txt
    ```
    
@@ -34,7 +34,7 @@
    
 5. Buka terminal lain lalu buat file python dengan command:
    
-   ```bash
+   ```Bash
    nano namafile.py
    ```
    
@@ -52,7 +52,7 @@
    
 7. Jika semua hal itu sudah terpenuhi, lanjutkan dengan menjalankan kode python yang sudah dibuat tadi dengan:
    
-   ```bash
+   ```Bash
    python3 namafile.py
    ```
    
