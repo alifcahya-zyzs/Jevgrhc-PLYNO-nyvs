@@ -18,9 +18,9 @@ git clone https://github.com/alifcahya-zyzs/Jevgrhc-PLYNO-nyvs
 
 ### Daftar isi folder: 
 
-`Nama folder ini sengaja di encrypt pakai rot13 biar susah ditemuin di internet :)`
 
-| Nomor | ROT13 | Nama Asli |
-| :--: | :-- | :-- |
-| **1.** | Jro Rkcybvgngvba | `Web Exploitataion` |
-| **2.** | Pelcgbtencul | `Cryptography` |
+| Nomor | Nama Asli |
+| :--: | :-- |
+| **1.** | `Web Exploitataion` |
+| **2.** | `Cryptography` |
+| **3.** | `Reverse Engineering` |
